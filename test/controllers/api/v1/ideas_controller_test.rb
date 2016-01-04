@@ -26,4 +26,15 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     end
   end
 
+  #test 'controller responds to json' do
+    #id = ideas(:one).id
+    #get :show, id: id, format: :json
+    #assert_response :success
+  #end
+
+  test '#show responds with a particular idea' do
+    id = ideas(:one).id
+    get :show, id: id, format: :json
+    assert_equal id, json_response['id']
+  end
 end
