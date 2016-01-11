@@ -8,6 +8,8 @@ gem 'responders'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
