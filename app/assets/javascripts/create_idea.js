@@ -9,7 +9,9 @@ $(document).ready(function () {
 
 function createIdea(event) {
   event.preventDefault();
-  IdeaRepository.create(getNewIdea());
+  clearErrors();
+  IdeaRepository.create(getNewIdea())
+                .fail(renderError);
 }
 
 function getNewIdea() {
@@ -17,4 +19,8 @@ function getNewIdea() {
     title: newIdeaTitle.val(),
     body:  newIdeaBody.val()
   }
+}
+
+function clearErrors() {
+  return errorMessages.html('');
 }
