@@ -37,11 +37,4 @@ class BasicTemplateTest < ActionDispatch::IntegrationTest
     assert page.has_css? 'form.new-idea input[type="submit"].new-idea-submit'
   end
 
-  test 'it creates a new idea upon form submission' do
-    assert_difference 'Idea.count', 1 do
-      page.fill_in 'idea[title]', with: 'Special Idea'
-      page.fill_in 'idea[body]', with: 'World domination'
-      page.click_button 'Submit Idea'
-    end
-  end
 end

@@ -12,7 +12,7 @@ function createIdea(event) {
   IdeaRepository.create(getNewIdea());
 }
 
-function getnewIdea() {
+function getNewIdea() {
   return {
     title: newIdeaTitle.val(),
     body:  newIdeaBody.val()
