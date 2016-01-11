@@ -16,7 +16,7 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     assert_equal Idea.count, json_response.count
   end
 
-  test '#index contains ideas witht he correct properties' do
+  test '#index contains ideas with the correct properties' do
     get :index, format: :json
 
     json_response.each do |idea|
@@ -26,11 +26,12 @@ class Api::V1::IdeasControllerTest < ActionController::TestCase
     end
   end
 
-  #test 'controller responds to json' do
-    #id = ideas(:one).id
-    #get :show, id: id, format: :json
-    #assert_response :success
-  #end
+  test "ideas controller responds to json" do
+    id = ideas(:one).id
+
+    get :show, id: id, format: :json
+    assert_response :success
+  end
 
   test '#show responds with a particular idea' do
     id = ideas(:one).id
